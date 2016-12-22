@@ -1,7 +1,7 @@
 
 
 # AngularWCS8NodeJS
-
+Thanks the help, DLG! 
 
 
 ## Usage
