@@ -1,0 +1,25 @@
+<div ng-controller="shopController">
+	<h1>shop <small>category</small></h1>
+	
+	<div ng-show="selectedProduct">
+		<img src="https://jtwcs8{{selectedProduct.thumbnail}}" style="float:left;" />
+		<br>{{selectedProduct.manufacturer}}
+		<br>{{selectedProduct.name}}
+		<br>{{selectedProduct.shortDescription}}
+		<br>{{selectedProduct.longDescription}}
+		<br>
+		<br>Price:
+		<ul>
+			<li ng-repeat="price in selectedProductPrices">{{price.usage}}: {{price.value}}{{price.currency}}</li>
+		</ul>
+		<button class="btn btn-md btn-default" ng-click="addToCart(selectedProduct)">Add to cart</button>
+	</div>
+	
+	<table class="table table-condensed table-bordered table-striped">
+		<tr ng-repeat="product in productsInCateogry" ng-click="expandProduct(product)">
+			<td>{{product.name}}</td>
+			<td>{{product.partNumber}}</td>
+		</tr>
+	</table>
+</div>
+	

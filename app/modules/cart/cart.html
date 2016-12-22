@@ -1,0 +1,16 @@
+<div ng-controller="cartController">
+	<h1>cart</h1>
+	
+	<table class="table table-condensed table-bordered table-striped">
+		<tr ng-repeat="item in orderItems">
+			<td>{{item.partNumber}}</td>
+			<td><input type="text" ng-model="item.quantity" ng-change="updateQty(item)" /></td>
+			<td>{{item.unitPrice}}</td>
+		</tr>
+	</table>
+	
+	Grand Total: {{order.grandTotal}}
+	<br>
+	<button class="btn btn-md btn-default" ng-click="backToShop()">Continue shopping</button>
+</div>
+	
