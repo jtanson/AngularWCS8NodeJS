@@ -1,6 +1,8 @@
 <div ng-controller="shopController">
-	<h1>shop <small>category</small></h1>
-	
+	<h1>shop <small>category 10044</small></h1>
+	<div>
+		<button ng-disabled="isCartEmpty" class="btn btn-md btn-default" ng-click="viewCart()">View cart</button>
+	</div>
 	<div ng-show="selectedProduct">
 		<img src="https://jtwcs8{{selectedProduct.thumbnail}}" style="float:left;" />
 		<br>{{selectedProduct.manufacturer}}
@@ -14,7 +16,6 @@
 		</ul>
 		<button class="btn btn-md btn-default" ng-click="addToCart(selectedProduct)">Add to cart</button>
 	</div>
-	
 	<table class="table table-condensed table-bordered table-striped">
 		<tr ng-repeat="product in productsInCateogry" ng-click="expandProduct(product)">
 			<td>{{product.name}}</td>

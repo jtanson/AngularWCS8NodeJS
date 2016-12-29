@@ -19,21 +19,20 @@ app.service('user', function ($cookies, $http, $window, $location) {
 		return JSON.parse('{"wctoken": "'+this.getUserToken()+'", "wctrustedtoken": "'+this.getUserTrustedToken()+'"}');
 	}
 	/*this.logoutUser = function() {
-		$http({
-			method: 'POST',
-			url: '/mdm/action/logoutAction',
-	  	}).then(function successCallback(response) {
-			if (response != null && response.data.Errors != null) {    				
-				$scope.errors = response.data;
-			} else {
-				$cookies.remove('user');
-				$cookies.remove('environment');
-				$window.localStorage.clear();
-				$location.path('/login');
-			}
-		}, function errorCallback(response) {
-		 	$scope.errors = response.data;
-		});
+		$cookies.remove('userToken');
+		$cookies.remove('userTrustedToken');
+		$window.localStorage.clear();
+		$location.path('/login');
 	}*/
-})
-
+});
+app.service('cart', function ($cookies, $http, $window, $location) {
+	var isEmpty = true;
+	this.getCartEmptyFlag = function()
+	{
+		return isEmpty;
+	}
+	this.setCartEmptyFlag = function(bool)
+	{
+		isEmpty = bool;
+	}
+});

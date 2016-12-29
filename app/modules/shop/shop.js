@@ -1,6 +1,6 @@
 angular.module('angularWCS8.shop', [])
 
-.controller('shopController', function($scope, $http, $location, user, localStorageService) {
+.controller('shopController', function($scope, $http, $location, localStorageService, user, cart) {
 	$http({
 		method: 'GET',
 		url: 'https://jtwcs8:443/search/resources/store/11451/productview/byCategory/10044'
@@ -44,6 +44,10 @@ angular.module('angularWCS8.shop', [])
 			console.log(response.data);
 		});
 	};
+	$scope.viewCart= function(product) {
+		$location.path('/cart');
+	};
+	$scope.isCartEmpty = cart.getCartEmptyFlag();
 });
 	
 	
