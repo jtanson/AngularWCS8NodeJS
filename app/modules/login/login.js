@@ -1,10 +1,11 @@
 angular.module('angularWCS8.login', [])
 
 .controller('loginController', function($scope, $http, $location, user) {
+	
 	$scope.shopAsGuest= function() {
 		$http({
     		method: 'POST',
-    		url: 'https://jtwcs8:443/wcs/resources/store/11451/guestidentity'
+    		url: settings.wcs_url + '/guestidentity'
       	}).then(function successCallback(response) {				
 			console.log('get guestidentity successful');
 			console.log(response.data);
@@ -19,7 +20,7 @@ angular.module('angularWCS8.login', [])
 		console.log($scope.formParams);
 		$http({
     		method: 'POST',
-    		url: 'https://jtwcs8:443/wcs/resources/store/11451/loginidentity',
+    		url: settings.wcs_url + '/loginidentity',
     		data: $scope.formParams
       	}).then(function successCallback(response) {  				
 			console.log('post loginidentity successful');

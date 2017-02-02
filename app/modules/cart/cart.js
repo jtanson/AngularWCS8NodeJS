@@ -5,7 +5,7 @@ angular.module('angularWCS8.cart', [])
 	$scope.getCart = function () {
 		$http({
 			method: 'GET',
-			url: 'https://jtwcs8/wcs/resources/store/11451/cart/@self',
+			url: settings.wcs_url + '/cart/@self',
 			headers: user.getHeaders()
 	  	}).then(function successCallback(response) {				
 			console.log('get cart successful');
@@ -32,7 +32,7 @@ angular.module('angularWCS8.cart', [])
 		var dataObj = '{"orderItem": [{"orderItemId": "'+item.orderItemId+'", "quantity": "'+item.quantity+'"}],"orderId": "'+localStorageService.get('orderId')+'"}';
 		$http({
 			method: 'PUT',
-			url: 'https://jtwcs8/wcs/resources/store/11451/cart/@self/update_order_item',
+			url: settings.wcs_url + '/cart/@self/update_order_item',
 			headers: user.getHeaders(),
 			data: dataObj
 	  	}).then(function successCallback(response) {				
@@ -50,7 +50,7 @@ angular.module('angularWCS8.cart', [])
 		var dataObj = '{"orderId": "'+localStorageService.get('orderId')+'"}';
 		$http({
 			method: 'PUT',
-			url: 'https://jtwcs8:443/wcs/resources/store/11451/cart/@self/precheckout',
+			url: settings.wcs_url + '/cart/@self/precheckout',
 			headers: user.getHeaders(),
 			data: dataObj
 	  	}).then(function successCallback(response) {				

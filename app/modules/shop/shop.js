@@ -3,7 +3,7 @@ angular.module('angularWCS8.shop', [])
 .controller('shopController', function($scope, $http, $location, localStorageService, user, cart) {
 	$http({
 		method: 'GET',
-		url: 'https://jtwcs8:443/search/resources/store/11451/productview/byCategory/10044'
+		url: settings.wcs_search_url + '/productview/byCategory/10044'
   	}).then(function successCallback(response) {				
 		console.log('get products by category successful');
 		console.log(response.data.catalogEntryView);
@@ -17,7 +17,7 @@ angular.module('angularWCS8.shop', [])
 		//var headerObj = JSON.parse('{"wctoken": "'+user.getUserToken()+'", "wctrustedtoken": "'+user.getUserTrustedToken()+'"}');
 		$http({
 			method: 'POST',
-			url: 'https://jtwcs8/wcs/resources/store/11451/cart',
+			url: settings.wcs_url + '/cart',
 			headers: user.getHeaders(),
 			data: dataObj
 	  	}).then(function successCallback(response) {				
