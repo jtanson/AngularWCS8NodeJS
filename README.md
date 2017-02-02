@@ -1,12 +1,12 @@
 
 
 # AngularWCS8NodeJS
-Thanks the help, DLG! 
 
+Thanks for the help, DLG!
 
 ## Usage
 
-
+https://jtwcs8:443/ is the hostname of another VM I am using to run WCS8. Often times this WC server may not be running, so feel free to change it in config.js.
 
 ## Developing
 
