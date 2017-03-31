@@ -5,13 +5,18 @@
 	</div>
 	<div ng-show="orderItems">
 		<table class="table table-condensed table-bordered table-striped">
+			<tr>
+				<th>Part Number</th>
+				<th>Qty</th>
+				<th>Unit Price</th>
+			</tr>
 			<tr ng-repeat="item in orderItems">
 				<td>{{item.partNumber}}</td>
 				<td><input type="text" ng-model="item.quantity" ng-change="updateQty(item)" /></td>
-				<td>{{item.unitPrice}}</td>
+				<td>{{item.unitPrice}} {{item.currency}}</td>
 			</tr>
 		</table>
-		<p>Grand Total: {{order.grandTotal}}</p>
+		<p>Grand Total: {{order.grandTotal}} {{order.grandTotalCurrency}}</p>
 		<button class="btn btn-md btn-default" ng-click="preCheckout()">Checkout</button>
 	</div>
 	<button class="btn btn-md btn-default" ng-click="backToShop()">Continue shopping</button>

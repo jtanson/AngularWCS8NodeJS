@@ -25,6 +25,7 @@ angular.module('angularWCS8.login', [])
       	}).then(function successCallback(response) {  				
 			console.log('post loginidentity successful');
 			console.log(response.data);
+			user.setUserTokens(response.data.WCToken, response.data.WCTrustedToken);
 			$location.path('/shop');
     	}, function errorCallback(response) { 				
 			console.log('post loginidentity failed');

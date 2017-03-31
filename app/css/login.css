@@ -1,6 +1,8 @@
 /* line 4, ../sass/login.scss */
-.login-component .form-signin {
+.login-component {
   max-width: 330px;
+}
+.login-component .form-signin {
   padding: 15px;
   margin: 0 auto;
 }
